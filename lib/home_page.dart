@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infinite_scrolling/product_screen.dart';
 
 import 'gridview.dart';
 import 'listview.dart';
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -23,6 +24,9 @@ class HomeScreen extends StatelessWidget {
               Tab(
                 icon: Icon(Icons.list_rounded),
               ),
+              Tab(
+                icon: Icon(Icons.post_add_rounded),
+              ),
             ],
           ),
         ),
@@ -30,6 +34,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             InfiniteGridView(),
             InfiniteListView(),
+            ProductScreen(),
           ],
         ),
       ),
